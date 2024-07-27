@@ -1,9 +1,9 @@
 package one.dio.gof.strategy;
 
-public class ComportamentoNormal implements Comportamento {
+public class ComportamentoDefensivo implements Comportamento {
 
     @Override
     public void mover(){
-        System.out.println("Movendo-se normalmente.. .");
+        System.out.println("Movendo-se defensivamente.. .");
     }
 }

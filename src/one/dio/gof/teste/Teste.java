@@ -1,8 +1,9 @@
 package one.dio.gof.teste;
 
-import one.dio.gof.SingletonEager;
-import one.dio.gof.SingletonLazy;
-import one.dio.gof.SingletonLazyHolder;
+import one.dio.gof.singleton.SingletonEager;
+import one.dio.gof.singleton.SingletonLazy;
+import one.dio.gof.singleton.SingletonLazyHolder;
+import one.dio.gof.strategy.*;
 
 public class Teste {
     public static void main(String[] args) {
@@ -22,5 +23,23 @@ public class Teste {
         System.out.println(lazyHolder);
         lazyHolder = SingletonLazyHolder.getInstancia();
         System.out.println(lazyHolder);
+
+        // Strategy
+        ComportamentoNormal normal = new ComportamentoNormal();
+        ComportamentoDefensivo defensivo = new ComportamentoDefensivo();
+        ComportamentoAgressivo agressivo = new ComportamentoAgressivo();
+
+        Robo robo = new Robo();
+        robo.setComportamento(normal);
+        robo.mover();
+
+        robo.setComportamento(defensivo);
+        robo.mover();
+        robo.mover();
+
+        robo.setComportamento(agressivo);
+        robo.mover();
+        robo.mover();
+        robo.mover();
     }
 }
